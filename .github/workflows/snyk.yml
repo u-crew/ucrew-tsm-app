@@ -78,8 +78,8 @@ jobs:
       - name: Snyk IAC Test
         run: |
           snyk auth ${{ secrets.SNYK_TOKEN }}
-          snyk test azure.json
-          snyk test ec2.tf
+          snyk iact test azure.json
+          snyk iac test ec2.tf
 
         # Push the Snyk Code results into GitHub Code Scanning tab
       - name: Upload result to GitHub Code Scanning
