@@ -75,7 +75,7 @@ jobs:
           snyk container monitor ucrew-tsm-app --file=Dockerfile --org=e7ea304d-5d12-455e-849b-3144611fab9c
         
         # Run Snyk IAC test
-       - name: Snyk IAC Test
+      - name: Snyk IAC Test
         run: |
           snyk auth ${{ secrets.SNYK_TOKEN }}
           snyk test azure.json
