@@ -41,8 +41,6 @@ jobs:
         uses: snyk/actions/node@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-      - name: Installing snyk-delta and dependencies
-        run: npm i -g snyk-delta
       - name: Set up Snyk CLI to check for security issues
         # Snyk can be used to break the build when it detects security issues.
         # In this case we want to upload the SAST issues to GitHub Code Scanning
@@ -67,8 +65,9 @@ jobs:
           snyk code test --sarif --sarif-file-output=snyk-code.sarif --org=e7ea304d-5d12-455e-849b-3144611fab9c || true
 
         # Runs Snyk Open Source (SCA) analysis and uploads result to Snyk.
-      - name: Snyk Open Source monitor
+      - name: Snyk Open Source with delta 
         run: |
+          npm i -g snyk-delta
           snyk auth ${{ secrets.SNYK_TOKEN }}
           snyk test --json --print-deps --org=e7ea304d-5d12-455e-849b-3144611fab9c | snyk-delta
 
