@@ -25,12 +25,13 @@ jobs:
      - uses: actions/checkout@master
      #install dependencies
      - run: yarn global add snyk-delta
+     - run: yarn
      - name: Set Snyk ORG
        run: snyk config set org=e7ea304d-5d12-455e-849b-3144611fab9c
      #authenticate with your snyk token
      - run: snyk auth ${{ secrets.SNYK_TOKEN }}
      #run a snyk delta test only failing of there are new criticial issues, Not if the project hasn't been monitored
-     - run: snyk test --json --print-deps
+     - run: snyk test --json --print-deps | snyk-delta --setPassIfNoBaseline true
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
      - name: Snyk code test - SAST
