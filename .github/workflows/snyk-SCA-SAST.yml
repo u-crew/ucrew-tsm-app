@@ -1,4 +1,4 @@
-name: Snyk Security
+name: Snyk SAST & SCA
 
 on:
   push:
@@ -36,7 +36,3 @@ jobs:
      - run: snyk monitor
      - name: Snyk code test - SAST
        run: snyk code test
-     - name: Snyk container monitor
-       run: |
-         docker build -t ucrew-tsm-app .
-         snyk container monitor ucrew-tsm-app --file=Dockerfile
