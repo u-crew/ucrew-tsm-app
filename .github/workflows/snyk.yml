@@ -32,7 +32,9 @@ jobs:
      - run: snyk test --json --print-deps --severity-threshold=critical --baselineOrg=e7ea304d-5d12-455e-849b-3144611fab9cg | snyk-delta --setPassIfNoBaseline true 
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
-     - run: snyk code test
-     - run: |
-        docker build -t ucrew-tsm-app .
-        snyk container monitor ucrew-tsm-app --file=Dockerfile --org=e7ea304d-5d12-455e-849b-3144611fab9cg
+     - name: Snyk code test - SAST
+       run: snyk code test
+     - name: Snyk container monitor
+       run: |
+         docker build -t ucrew-tsm-app .
+         snyk container monitor ucrew-tsm-app --file=Dockerfile --org=e7ea304d-5d12-455e-849b-3144611fab9cg
