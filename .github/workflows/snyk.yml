@@ -24,7 +24,8 @@ jobs:
      #use the current repo
      - uses: actions/checkout@master
      #install dependencies
-     - run: npm i
+     - run: npm i -g yarn
+     - run: yarn
      - run: npm i -g snyk-delta
      - name: Set Snyk ORG
        run: snyk config set org=e7ea304d-5d12-455e-849b-3144611fab9c
