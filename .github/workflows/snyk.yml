@@ -26,10 +26,12 @@ jobs:
      #install dependencies
      - run: npm i
      - run: npm i -g snyk-delta
+     - name: Set Snyk ORG
+       run: snyk config set org=e7ea304d-5d12-455e-849b-3144611fab9cg
      #authenticate with your snyk token
      - run: snyk auth ${{ secrets.SNYK_TOKEN }}
      #run a snyk delta test only failing of there are new criticial issues, Not if the project hasn't been monitored
-     - run: snyk test --json --print-deps --severity-threshold=critical --baselineOrg=e7ea304d-5d12-455e-849b-3144611fab9cg | snyk-delta --setPassIfNoBaseline true 
+     - run: snyk test --json --print-deps --severity-threshold=critical | snyk-delta --setPassIfNoBaseline true 
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
      - name: Snyk code test - SAST
@@ -37,4 +39,4 @@ jobs:
      - name: Snyk container monitor
        run: |
          docker build -t ucrew-tsm-app .
-         snyk container monitor ucrew-tsm-app --file=Dockerfile --org=e7ea304d-5d12-455e-849b-3144611fab9cg
+         snyk container monitor ucrew-tsm-app --file=Dockerfile
