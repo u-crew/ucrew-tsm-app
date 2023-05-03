@@ -13,7 +13,7 @@ permissions:
 jobs:
 
   #only 1 job run snyk delta and if that passes run snyk monitor
-  snyk-delta-monitor:
+  snyk-checks:
 
     #run this on an ubuntu runner using one of snyks node images as a container
     runs-on: ubuntu-latest
@@ -31,7 +31,7 @@ jobs:
      #authenticate with your snyk token
      - run: snyk auth ${{ secrets.SNYK_TOKEN }}
      #run a snyk delta test only failing of there are new criticial issues, Not if the project hasn't been monitored
-     - run: snyk test --json --print-deps | snyk-delta --setPassIfNoBaseline true 
+     - run: snyk test --json --print-deps -d | snyk-delta -d --setPassIfNoBaseline true 
      #if the previous scan doesn't come back with an error code then monitor the project
      - run: snyk monitor
      - name: Snyk code test - SAST
