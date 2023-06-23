@@ -1,6 +1,6 @@
 {
   "name": "ucrew-tsm-app",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tremor/react": "^2.8.3",
     "autoprefixer": "10.4.14",
     "next": "13.3.1",
     "react": "18.2.0",
