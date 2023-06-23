@@ -2292,6 +2292,13 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
+progressbar.js@0.5.3:
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/progressbar.js/-/progressbar.js-0.5.3.tgz#8babbb1bd7e3a5d53fde92b6b9c3ddf5ff11a06d"
+  integrity sha512-fNJQTgvEzmmfwXV7V+ws/sgW8+KJk3TKDHzaW/04+P6t7Wx049ivYtfK2ttF0xOJq4Un+obGAYA1M3GnZ9wnVg==
+  dependencies:
+    shifty "1.2.2"
+
 prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
@@ -2517,6 +2524,11 @@ shebang-regex@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
+
+shifty@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/shifty/-/shifty-1.2.2.tgz#76c082dc58e5e2f313b6deb700d547a3553e87a1"
+  integrity sha512-paV00QF0c99VC1YIBewWh9HyLPmZpuCUvS3QxoSZ3OuJ1CjZYDmXaUeOmZCl2ZPuodzGmHL1mXK4prMI/zbyzQ==
 
 side-channel@^1.0.4:
   version "1.0.4"
