@@ -15,7 +15,7 @@
     "progressbar.js": "0.5.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "vm2": "3.9.15"
+    "vm2": "3.9.19"
   },
   "devDependencies": {
     "@types/node": "18.16.1",
