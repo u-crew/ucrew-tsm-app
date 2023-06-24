@@ -232,10 +232,10 @@
   dependencies:
     tslib "^2.4.0"
 
-"@tremor/react@^2.8.3":
-  version "2.8.3"
-  resolved "https://registry.yarnpkg.com/@tremor/react/-/react-2.8.3.tgz#dd926c1194d8a07ddecb46e9d29db4195e3b0e41"
-  integrity sha512-wjVZ6Ti9FFRh3Q7p+gTkfgl+GVpBSQcaA0MJp7EABC0s1YtXe0kejiKZWBaurseZRClM26YAHtrHR5QyGbfMvA==
+"@tremor/react@^2.9.1":
+  version "2.11.0"
+  resolved "https://registry.yarnpkg.com/@tremor/react/-/react-2.11.0.tgz#f61f09fbdc79f1e39362b66e49a43d203cd2f6b3"
+  integrity sha512-UdIpFHVm5F7vRml9IL3CrIl7doxgg8a5q89ht/dUF7hVBjd7veSbYdfCQCHV1yfjmCqTXjeMAeP3N1ObfwAwCw==
   dependencies:
     "@floating-ui/react" "^0.19.1"
     date-fns "^2.28.0"
